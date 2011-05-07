@@ -38,11 +38,11 @@ A.download-csv:link
 {
 	text-decoration: none;
 }
-DIV.filter A.download-csv:visited
+DIV.menu A.download-csv:visited
 {
 	text-decoration: none;
 }
-DIV.filter A.download-csv:hover
+DIV.menu A.download-csv:hover
 {
 	text-decoration: none;
 	background: url(download-hover.png) no-repeat 6px 2px;
@@ -53,11 +53,30 @@ H2
 	color: #444;
 	margin: 0 0 10px;
 }
-DIV.filter
+DIV.menu
 {
 	padding: 5px;
 	margin-bottom: 10px;
 	font-weight: bold;
+}
+DIV.menu A.menu-item
+{
+	margin-right: 10px;
+	padding: 8px;
+	background: -webkit-gradient( linear, left bottom, left top, color-stop(0.24, rgb(242,242,242)), color-stop(0.65, rgb(252,252,252)) );
+	background: -moz-linear-gradient( center bottom, rgb(242,242,242) 24%, rgb(252,252,252) 65% );
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	border: 1px solid #D4D4D4;
+	-moz-box-shadow: 0px 3px 4px rgba(0,0,2,.1);
+	-webkit-box-shadow: 0px 1px 4px rgba(0,0,2,.1);
+	box-shadow: 0px 3px 4px rgba(0, 0, 2, 0.1);
+}
+DIV.menu A.menu-item IMG
+{
+	border: none;
+	margin-bottom: -8px;
 }
 DIV.key-values UL
 {
@@ -131,6 +150,19 @@ SELECT
 }
 .options-menu IMG
 {
-	margin: 0 0 -9px;
+	margin: 0 0 -7px;
 	border: none;
+}
+DIV.options A
+{
+	margin: 20px 0 10px;
+}
+DIV.options UL
+{
+	margin: 5px 0 0;
+	padding: 0;
+}
+DIV.options LI
+{
+	display: inline;
 }

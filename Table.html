@@ -8,10 +8,10 @@
 <body>
   <div class="report-container">
     <div class="menu">
-      <a href="#"><img src="download.png" alt="Filter"></a>
-      <a href="#"><img src="download.png" alt="Sort"></a>
-      <a href="#"><img src="download.png" alt="Group"></a>
-      <a href="#"><img src="download.png" alt="Search"></a>
+      <a href="#" class="menu-item"><img src="Filter.png" alt="Filter"></a>
+      <a href="#" class="menu-item"><img src="Group.png" alt="Sort"></a>
+      <a href="#" class="menu-item"><img src="sort.png" alt="Group"></a>
+      <a href="#" class="menu-item"><img src="Search.png" alt="Search"></a>
       <a href="#" class="download-csv button">Download CSV</a>
     </div>
 
@@ -28,6 +28,13 @@
       <input type="text" class="options-input">
       <!-- Todo: Decide if the hover style is going to come from CSS or using JS -->
       <a href="#" class="options-menu"><img src="Add.png"></a>
+      <!-- Todo: Get rid of the ul and find a more robust way of styling this --> 
+      <ul>
+        <li><input type="button" value="Filter">
+        <li>or</li>
+        <li><a href="#">Cancel</a></li>
+      </ul>
+
     </div>
 
     <table>
