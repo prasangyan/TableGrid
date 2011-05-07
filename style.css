@@ -1,0 +1,124 @@
+.report-container
+{
+	font: 1em Arial;
+	color: #444;
+}
+A.button
+{
+	margin-bottom: 10px;
+	color: #444;
+	padding: 0 10px 4px 0;
+	background: -webkit-gradient( linear, left bottom, left top, color-stop(0.24, rgb(242,242,242)), color-stop(0.65, rgb(252,252,252)) );
+	background: -moz-linear-gradient( center bottom, rgb(242,242,242) 24%, rgb(252,252,252) 65% );
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	border: 1px solid #D4D4D4;
+	-moz-box-shadow: 0px 3px 4px rgba(0,0,2,.1);
+	-webkit-box-shadow: 0px 1px 4px rgba(0,0,2,.1);
+	box-shadow: 0px 3px 4px rgba(0, 0, 2, 0.1);
+}
+A.button:hover
+{
+	color: #00A6CB;
+}
+A.button:active
+{
+	margin: 1px 0 0;
+}
+A.download-csv
+{
+	float: right;
+	background: url(download.png) no-repeat 6px 2px;
+	padding-left: 30px;
+	padding-top: 6px;
+	padding-bottom: 6px;
+}
+A.download-csv:link
+{
+	text-decoration: none;
+}
+DIV.filter A.download-csv:visited
+{
+	text-decoration: none;
+}
+DIV.filter A.download-csv:hover
+{
+	text-decoration: none;
+	background: url(download-hover.png) no-repeat 6px 2px;
+}
+H2
+{
+	font-size: 1.5em;
+	color: #444;
+	margin: 0 0 10px;
+}
+DIV.filter
+{
+	padding: 5px;
+	margin-bottom: 10px;
+	font-weight: bold;
+}
+DIV.key-values UL
+{
+	margin: 0 0 10px;
+	padding: 0 0 0 5px;
+	list-style: none;
+}
+DIV.key-values UL LI
+{
+	display: inline;
+	font-weight: bold;
+	font-size: 1.2em;
+	margin-right: 20px;
+}
+DIV.key-values UL LI SPAN
+{
+	color: #999;
+	font-size: 0.8em;
+}
+TABLE
+{
+	width: 100%;
+	color: #444;
+/*Clearing padding on the table. This is equivalent to specifying cellspacing=0 in the HTML page*/
+	border-collapse: collapse;
+	border: 1px solid #999;
+}
+TR:hover
+{
+	background: #ECECEC;
+}
+TH
+{
+	text-align: left;
+	padding: 5px;
+	color: #FFF;
+	background: #444;
+}
+TR.TimesheetManager TD
+{
+	font-weight: bold;
+	padding: 5px;
+}
+TD
+{
+	margin: 0px;
+	padding: 5px 5px 5px 15px;
+}
+.not-started
+{
+	color: #FF1E00;
+}
+.not-submitted
+{
+	color: #00A6CB;
+}
+/*Forms*/
+INPUT.options-input
+{
+	width: 300px;
+}
+SELECT
+{
+}
