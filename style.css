@@ -115,10 +115,22 @@ TD
 	color: #00A6CB;
 }
 /*Forms*/
+DIV.options
+{
+	background: #ECECEC;
+	padding: 10px;
+	margin: 20px 0 10px;
+	border: 1px solid #DDD;
+}
 INPUT.options-input
 {
 	width: 300px;
 }
 SELECT
 {
+}
+.options-menu IMG
+{
+	margin: 0 0 -9px;
+	border: none;
 }

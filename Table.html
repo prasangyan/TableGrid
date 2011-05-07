@@ -7,11 +7,11 @@
 </head>
 <body>
   <div class="report-container">
-    <div class="filter">
-      <a href="#">Filter</a>
-      <a href="#">Search</a>
-      <a href="#">Group By</a>
-      <a href="#">Sort</a>
+    <div class="menu">
+      <a href="#"><img src="download.png" alt="Filter"></a>
+      <a href="#"><img src="download.png" alt="Sort"></a>
+      <a href="#"><img src="download.png" alt="Group"></a>
+      <a href="#"><img src="download.png" alt="Search"></a>
       <a href="#" class="download-csv button">Download CSV</a>
     </div>
 
@@ -24,15 +24,10 @@
         <option>Contains</option>
         <option>does not contain</option>
         <option>Options</option>
-        
       </select>
-    </div>
-
-    <div class="key-values">
-      <ul>
-        <li class="">10 <span>not started</span></li>
-        <li class="">30 <span>not submitted</span></li>
-      </ul>
+      <input type="text" class="options-input">
+      <!-- Todo: Decide if the hover style is going to come from CSS or using JS -->
+      <a href="#" class="options-menu"><img src="Add.png"></a>
     </div>
 
     <table>
