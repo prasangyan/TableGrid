@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="31fee496-469b-44da-8e0b-558f08d23f53" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Add.png" afterPath="$PROJECT_DIR$/Add.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Table.html" afterPath="$PROJECT_DIR$/Table.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/style.css" afterPath="$PROJECT_DIR$/style.css" />
@@ -29,10 +29,19 @@
   <component name="FileColors" enabled="true" enabledForTabs="true" showNonProject="false" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Table.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Table.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Table.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="39" selection-start="1387" selection-end="1387" vertical-scroll-proportion="0.4070946">
+            <state line="68" column="0" selection-start="2532" selection-end="2532" vertical-scroll-proportion="-0.8076923">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bsn.AutoSuggest_2.0.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$USER_HOME$/Downloads/autosuggest_v2/bsn.AutoSuggest_2.0/bsn.AutoSuggest_2.0.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1" column="6" selection-start="13" selection-end="13" vertical-scroll-proportion="-3.3350604">
               <folding />
             </state>
           </provider>
@@ -72,6 +81,7 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
+        <option value="$PROJECT_DIR$/style.css" />
         <option value="$PROJECT_DIR$/Table.html" />
       </list>
     </option>
@@ -216,9 +226,31 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/../Clients/SEW/Charts/HTML/HTML Layout/project-select.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="0" selection-start="417" selection-end="417" vertical-scroll-proportion="-9.807693" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Clients/SEW/Charts/HTML/HTML Layout/basepage.htm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="14" selection-start="30" selection-end="30" vertical-scroll-proportion="-0.65384614" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="17" selection-start="704" selection-end="704" vertical-scroll-proportion="0.6181818" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Table.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="39" selection-start="1387" selection-end="1387" vertical-scroll-proportion="0.4070946">
+        <state line="68" column="0" selection-start="2532" selection-end="2532" vertical-scroll-proportion="-0.8076923">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/autosuggest_v2/bsn.AutoSuggest_2.0/bsn.AutoSuggest_2.0.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="6" selection-start="13" selection-end="13" vertical-scroll-proportion="-3.3350604">
           <folding />
         </state>
       </provider>

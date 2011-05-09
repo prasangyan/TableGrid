@@ -1,3 +1,14 @@
+/*Colour Scheme
+Blue:00A6CB
+Yellow: eefd00
+Grey: 444, 999, ececec
+Common Styles
+Appear this style to any element that appears. The background should fade in and fade out*/
+.AppearHighlight
+{
+	background: #FDFFDB;
+}
+/*Styles*/
 .report-container
 {
 	font: 1em Arial;
@@ -136,7 +147,7 @@ TD
 /*Forms*/
 DIV.options
 {
-	background: #ECECEC;
+	background: #EFEFEF;
 	padding: 10px;
 	margin: 20px 0 10px;
 	border: 1px solid #DDD;
@@ -150,7 +161,7 @@ SELECT
 }
 .options-menu IMG
 {
-	margin: 0 0 -7px;
+	margin: 0 0 -7px 10px;
 	border: none;
 }
 DIV.options A
@@ -165,4 +176,27 @@ DIV.options UL
 DIV.options LI
 {
 	display: inline;
+}
+FIELDSET
+{
+	border: none;
+	margin: 0;
+	padding: 5px 0;
+}
+.secondary-button-option
+{
+	color: #444;
+	padding: 2px;
+}
+.secondary-button-option:hover
+{
+	background: #444;
+	color: #FFF;
+}
+FIELDSET.AndOrSelector
+{
+}
+.AppearHighlight
+{
+	background: #FDFFDB;
 }
