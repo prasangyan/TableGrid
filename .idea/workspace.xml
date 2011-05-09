@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="31fee496-469b-44da-8e0b-558f08d23f53" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Add.png" afterPath="$PROJECT_DIR$/Add.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Table.html" afterPath="$PROJECT_DIR$/Table.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/style.css" afterPath="$PROJECT_DIR$/style.css" />
     </list>
     <ignored path="TableLayout.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,19 +26,24 @@
   <component name="FileColors" enabled="true" enabledForTabs="true" showNonProject="false" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Table.html" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Table.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Table.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="68" column="0" selection-start="2532" selection-end="2532" vertical-scroll-proportion="-0.8076923">
-              <folding />
+            <state line="247" column="10" selection-start="8759" selection-end="8759" vertical-scroll-proportion="0.5219595">
+              <folding>
+                <element signature="tag#div#1;tag#div#0;tag#body#0;tag#html#0" expanded="false" />
+                <element signature="tag#div#2;tag#div#0;tag#body#0;tag#html#0" expanded="false" />
+                <element signature="tag#div#3;tag#div#0;tag#body#0;tag#html#0" expanded="false" />
+                <element signature="tag#div#4;tag#div#0;tag#body#0;tag#html#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bsn.AutoSuggest_2.0.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="bsn.AutoSuggest_2.0.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$USER_HOME$/Downloads/autosuggest_v2/bsn.AutoSuggest_2.0/bsn.AutoSuggest_2.0.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="6" selection-start="13" selection-end="13" vertical-scroll-proportion="-3.3350604">
+            <state line="14" column="23" selection-start="394" selection-end="394" vertical-scroll-proportion="-9.153846">
               <folding />
             </state>
           </provider>
@@ -113,6 +115,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="Favorites" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -133,7 +136,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Favorites" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -241,17 +243,22 @@
         <state line="26" column="17" selection-start="704" selection-end="704" vertical-scroll-proportion="0.6181818" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Table.html">
+    <entry file="file://$USER_HOME$/Downloads/autosuggest_v2/bsn.AutoSuggest_2.0/bsn.AutoSuggest_2.0.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="68" column="0" selection-start="2532" selection-end="2532" vertical-scroll-proportion="-0.8076923">
+        <state line="14" column="23" selection-start="394" selection-end="394" vertical-scroll-proportion="-9.153846">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Downloads/autosuggest_v2/bsn.AutoSuggest_2.0/bsn.AutoSuggest_2.0.html">
+    <entry file="file://$PROJECT_DIR$/Table.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="6" selection-start="13" selection-end="13" vertical-scroll-proportion="-3.3350604">
-          <folding />
+        <state line="247" column="10" selection-start="8759" selection-end="8759" vertical-scroll-proportion="0.5219595">
+          <folding>
+            <element signature="tag#div#1;tag#div#0;tag#body#0;tag#html#0" expanded="false" />
+            <element signature="tag#div#2;tag#div#0;tag#body#0;tag#html#0" expanded="false" />
+            <element signature="tag#div#3;tag#div#0;tag#body#0;tag#html#0" expanded="false" />
+            <element signature="tag#div#4;tag#div#0;tag#body#0;tag#html#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
