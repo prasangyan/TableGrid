@@ -129,17 +129,32 @@ TH
 TR.TimesheetManager TD
 {
 	font-weight: bold;
-	padding: 10px;
+	padding: 10px 0px 10px 5px;
 }
 TR.TimesheetManager TD IMG
 {
 	vertical-align: middle;
+/*Todo: See if there is an alternative to this negative margin*/
+	margin-top: -3px;
 	margin-right: 5px;
 }
 TD
 {
 	margin: 0px;
-	padding: 5px 5px 5px 15px;
+	padding: 5px;
+}
+/*Note: Each level the padding increases by 15px*/
+TD.level-1
+{
+	padding-left: 15px;
+}
+TD.level-2
+{
+	padding-left: 30px;
+}
+TD.level-3
+{
+	padding-left: 45px;
 }
 .not-started
 {

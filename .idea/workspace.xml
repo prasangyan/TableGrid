@@ -40,7 +40,16 @@
       <file leaf-file-name="Table.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Table.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="45" column="51" selection-start="1272" selection-end="1272" vertical-scroll-proportion="0.4543919">
+            <state line="44" column="38" selection-start="1330" selection-end="1330" vertical-scroll-proportion="0.25844595">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="8" column="40" selection-start="260" selection-end="260" vertical-scroll-proportion="-5.230769">
               <folding />
             </state>
           </provider>
@@ -83,6 +92,7 @@
         <option value="$PROJECT_DIR$/style.css" />
         <option value="$PROJECT_DIR$/Test.html" />
         <option value="$USER_HOME$/Downloads/thegrubbsian-jquery.ganttView-0.8.8-3-gc50fa9a(1)/thegrubbsian-jquery.ganttView-c50fa9a/example/index.html" />
+        <option value="$PROJECT_DIR$/test.html" />
         <option value="$PROJECT_DIR$/Table.html" />
       </list>
     </option>
@@ -249,14 +259,19 @@
     </entry>
     <entry file="file://$USER_HOME$/Downloads/thegrubbsian-jquery.ganttView-0.8.8-3-gc50fa9a(1)/thegrubbsian-jquery.ganttView-c50fa9a/example/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="0" selection-start="1804" selection-end="1804" vertical-scroll-proportion="0.0">
+        <state line="55" column="0" selection-start="1804" selection-end="1804" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="40" selection-start="260" selection-end="260" vertical-scroll-proportion="-5.230769">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Table.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="51" selection-start="1272" selection-end="1272" vertical-scroll-proportion="0.4543919">
+        <state line="44" column="38" selection-start="1330" selection-end="1330" vertical-scroll-proportion="0.25844595">
           <folding />
         </state>
       </provider>
