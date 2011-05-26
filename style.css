@@ -129,7 +129,12 @@ TH
 TR.TimesheetManager TD
 {
 	font-weight: bold;
-	padding: 5px;
+	padding: 10px;
+}
+TR.TimesheetManager TD IMG
+{
+	vertical-align: middle;
+	margin-right: 5px;
 }
 TD
 {

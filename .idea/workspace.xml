@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="31fee496-469b-44da-8e0b-558f08d23f53" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Table.html" afterPath="$PROJECT_DIR$/Table.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/style.css" afterPath="$PROJECT_DIR$/style.css" />
     </list>
     <ignored path="TableLayout.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,24 +28,19 @@
   <component name="FileColors" enabled="true" enabledForTabs="true" showNonProject="false" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Table.html" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Table.html">
+      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Downloads/thegrubbsian-jquery.ganttView-0.8.8-3-gc50fa9a(1)/thegrubbsian-jquery.ganttView-c50fa9a/example/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="247" column="10" selection-start="8759" selection-end="8759" vertical-scroll-proportion="0.5219595">
-              <folding>
-                <element signature="tag#div#1;tag#div#0;tag#body#0;tag#html#0" expanded="false" />
-                <element signature="tag#div#2;tag#div#0;tag#body#0;tag#html#0" expanded="false" />
-                <element signature="tag#div#3;tag#div#0;tag#body#0;tag#html#0" expanded="false" />
-                <element signature="tag#div#4;tag#div#0;tag#body#0;tag#html#0" expanded="false" />
-              </folding>
+            <state line="55" column="0" selection-start="1804" selection-end="1804" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bsn.AutoSuggest_2.0.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Downloads/autosuggest_v2/bsn.AutoSuggest_2.0/bsn.AutoSuggest_2.0.html">
+      <file leaf-file-name="Table.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Table.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="23" selection-start="394" selection-end="394" vertical-scroll-proportion="-9.153846">
+            <state line="45" column="51" selection-start="1272" selection-end="1272" vertical-scroll-proportion="0.4543919">
               <folding />
             </state>
           </provider>
@@ -84,6 +81,8 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/style.css" />
+        <option value="$PROJECT_DIR$/Test.html" />
+        <option value="$USER_HOME$/Downloads/thegrubbsian-jquery.ganttView-0.8.8-3-gc50fa9a(1)/thegrubbsian-jquery.ganttView-c50fa9a/example/index.html" />
         <option value="$PROJECT_DIR$/Table.html" />
       </list>
     </option>
@@ -114,8 +113,8 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Favorites" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -183,7 +182,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20667727" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21224165" sideWeight="0.0" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -245,20 +244,20 @@
     </entry>
     <entry file="file://$USER_HOME$/Downloads/autosuggest_v2/bsn.AutoSuggest_2.0/bsn.AutoSuggest_2.0.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="23" selection-start="394" selection-end="394" vertical-scroll-proportion="-9.153846">
+        <state line="14" column="23" selection-start="394" selection-end="394" vertical-scroll-proportion="0.019562716" />
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/thegrubbsian-jquery.ganttView-0.8.8-3-gc50fa9a(1)/thegrubbsian-jquery.ganttView-c50fa9a/example/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="55" column="0" selection-start="1804" selection-end="1804" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Table.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="247" column="10" selection-start="8759" selection-end="8759" vertical-scroll-proportion="0.5219595">
-          <folding>
-            <element signature="tag#div#1;tag#div#0;tag#body#0;tag#html#0" expanded="false" />
-            <element signature="tag#div#2;tag#div#0;tag#body#0;tag#html#0" expanded="false" />
-            <element signature="tag#div#3;tag#div#0;tag#body#0;tag#html#0" expanded="false" />
-            <element signature="tag#div#4;tag#div#0;tag#body#0;tag#html#0" expanded="false" />
-          </folding>
+        <state line="45" column="51" selection-start="1272" selection-end="1272" vertical-scroll-proportion="0.4543919">
+          <folding />
         </state>
       </provider>
     </entry>
