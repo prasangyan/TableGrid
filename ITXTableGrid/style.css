@@ -1,0 +1,350 @@
+/*Colour Scheme
+Blue:00A6CB
+Yellow: eefd00
+Grey: 444, 999, ececec
+Reset
+*
+* HTML5 ✰ Boilerplate
+*
+* style.css contains a reset, font normalization and some base styles.
+*
+* Credit is left where credit is due.
+* Much inspiration was taken from these projects:
+* - yui.yahooapis.com/2.8.1/build/base/base.css
+* - camendesign.com/design/
+* - praegnanz.de/weblog/htmlcssjs-kickstart
+ 
+*
+* html5doctor.com Reset Stylesheet (Eric Meyer's Reset Reloaded + HTML5 baseline)
+* v1.6.1 2010-09-17 | Authors: Eric Meyer & Richard Clark
+* html5doctor.com/html-5-reset-stylesheet/
+ */
+HTML, BODY, DIV, SPAN, OBJECT, IFRAME, H1, H2, H3, H4, H5, H6, P, BLOCKQUOTE, PRE, ABBR, ADDRESS, CITE, CODE, DEL, DFN, EM, IMG, INS, KBD, Q, SAMP, SMALL, STRONG, SUB, SUP, VAR, B, I, DL, DT, DD, OL, UL, LI, FIELDSET, FORM, LABEL, LEGEND, TABLE, CAPTION, TBODY, TFOOT, THEAD, TR, TH, TD, ARTICLE, ASIDE, CANVAS, DETAILS, FIGCAPTION, FIGURE, FOOTER, HEADER, HGROUP, MENU, NAV, SECTION, SUMMARY, TIME, MARK, AUDIO, VIDEO
+{
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit 1em sans-serif;
+	vertical-align: baseline;
+}
+ARTICLE, ASIDE, DETAILS, FIGCAPTION, FIGURE, FOOTER, HEADER, HGROUP, MENU, NAV, SECTION
+{
+	display: block;
+}
+BLOCKQUOTE, Q
+{
+	quotes: none;
+}
+BLOCKQUOTE:before, BLOCKQUOTE:after, Q:before, Q:after
+{
+	content: "";
+	content: none;
+}
+INS
+{
+	background-color: #FF9;
+	color: #000;
+	text-decoration: none;
+}
+MARK
+{
+	background-color: #FF9;
+	color: #000;
+	font-style: italic;
+	font-weight: bold;
+}
+DEL
+{
+	text-decoration: line-through;
+}
+ABBR[title], DFN[title]
+{
+	border-bottom: 1px dotted #000000;
+	cursor: help;
+}
+TABLE
+{
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+HR
+{
+	display: block;
+	height: 1px;
+	border: 0;
+	border-top: 1px solid #CCC;
+	margin: 1em 0;
+	padding: 0;
+}
+INPUT, SELECT
+{
+	vertical-align: middle;
+}
+/**
+* Font normalization inspired by YUI Library's fonts.css: developer.yahoo.com/yui/
+ */
+BODY
+{
+	font: 13px/1.231 sans-serif;
+	=font-size: small;
+}
+/*Hack retained to preserve specificity*/
+SELECT, INPUT, TEXTAREA, BUTTON
+{
+	font: 99% sans-serif;
+}
+/*Normalize monospace sizing:
+en.wikipedia.org/wiki/MediaWiki_talk:Common.css/Archive_11#Teletype_style_fix_for_Chrome*/
+PRE, CODE, KBD, SAMP
+{
+	font-family: monospace, sans-serif;
+}
+/**
+* Minimal base styles.
+ 
+Always force a scrollbar in non-IE*/
+HTML
+{
+	overflow-y: scroll;
+}
+/*Accessible focus treatment: people.opera.com/patrickl/experiments/keyboard/test*/
+A:hover, A:active
+{
+	outline: none;
+}
+UL, OL
+{
+	margin-left: 2em;
+}
+OL
+{
+	list-style-type: decimal;
+}
+/*Remove margins for navigation lists*/
+NAV UL, NAV LI
+{
+	margin: 0;
+	list-style: none;
+	list-style-image: none;
+}
+SMALL
+{
+	font-size: 85%;
+}
+STRONG, TH
+{
+	font-weight: bold;
+}
+TD
+{
+	vertical-align: top;
+}
+/*Set sub, sup without affecting line-height: gist.github.com/413930*/
+SUB, SUP
+{
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+}
+SUP
+{
+	top: -0.5em;
+}
+SUB
+{
+	bottom: -0.25em;
+}
+PRE
+{
+/*www.pathf.com/blogs/2008/05/formatting-quoted-code-in-blog-posts-css21-white-space-pre-wrap/*/
+	white-space: pre;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+	padding: 15px;
+}
+TEXTAREA
+{
+	overflow: auto;
+}
+/*www.sitepoint.com/blogs/2010/08/20/ie-remove-textarea-scrollbars/*/
+.ie6 LEGEND, .ie7 LEGEND
+{
+	margin-left: -7px;
+}
+/*Align checkboxes, radios, text inputs with their label by: Thierry Koblentz tjkdesign.com/ez-css/css/base.css*/
+INPUT[type="radio"]
+{
+	vertical-align: text-bottom;
+}
+INPUT[type="checkbox"]
+{
+	vertical-align: bottom;
+}
+.ie7 INPUT[type="checkbox"]
+{
+	vertical-align: baseline;
+}
+.ie6 INPUT
+{
+	vertical-align: text-bottom;
+}
+/*Hand cursor on clickable input elements*/
+LABEL, INPUT[type="button"], INPUT[type="submit"], INPUT[type="image"], BUTTON
+{
+	cursor: pointer;
+}
+/*Webkit browsers add a 2px margin outside the chrome of form elements*/
+BUTTON, INPUT, SELECT, TEXTAREA
+{
+	margin: 0;
+}
+/*Colors for form validity*/
+INPUT:valid, TEXTAREA:valid
+{
+}
+INPUT:invalid, TEXTAREA:invalid
+{
+	border-radius: 1px;
+	-moz-box-shadow: 0px 0px 5px red;
+	-webkit-box-shadow: 0px 0px 5px red;
+	box-shadow: 0px 0px 5px #FF0000;
+}
+.no-boxshadow INPUT:invalid, .no-boxshadow TEXTAREA:invalid
+{
+	background-color: #F0DDDD;
+}
+/*These selection declarations have to be separate
+No text-shadow: twitter.com/miketaylr/status/12228805301
+Also: hot pink!*/
+::-moz-selection
+{
+	background: #00A6CB;
+	color: #FFF;
+	text-shadow: none;
+}
+::selection
+{
+	background: #00A6CB;
+	color: #FFF;
+	text-shadow: none;
+}
+/*j.mp/webkit-tap-highlight-color*/
+A:link
+{
+	-webkit-tap-highlight-color: #00A6CB;
+}
+/*Make buttons play nice in IE:
+www.viget.com/inspire/styling-the-button-element-in-internet-explorer/*/
+BUTTON
+{
+	width: auto;
+	overflow: visible;
+}
+/*Bicubic resizing for non-native sized IMG:
+code.flickr.com/blog/2008/11/12/on-ui-quality-the-little-things-client-side-image-resizing/*/
+.ie7 IMG
+{
+	-ms-interpolation-mode: bicubic;
+}
+/**
+* You might tweak these..
+ */
+BODY, SELECT, INPUT, TEXTAREA
+{
+/*#444 looks better than black: twitter.com/H_FJ/statuses/11800719859*/
+	color: #444;
+/*Set your base font here, to apply evenly
+font-family: Georgia, serif;*/
+}
+/*Headers (h1, h2, etc) have no default font-size or margin; define those yourself*/
+H1, H2, H3, H4, H5, H6
+{
+	font-weight: bold;
+}
+A, A:active, A:visited
+{
+	color: #00A6CB;
+}
+A:hover
+{
+	background: #00A6CB;
+	color: #FFF;
+}
+/*Common Styles
+Appear this style to any element that appears. The background should fade in and fade out*/
+.AppearHighlight
+{
+	background: #FDFFDB;
+}
+/*Styles*/
+.report-container
+{
+	font-size: 1.2em;
+	color: #444;
+}
+TABLE
+{
+	width: 100%;
+	color: #444;
+/*Clearing padding on the table. This is equivalent to specifying cellspacing=0 in the HTML page*/
+	border-collapse: collapse;
+	border: 1px solid #999;
+}
+TR:hover
+{
+	background: #ECECEC;
+}
+TD
+{
+	margin: 0px;
+	padding: 5px;
+}
+TH
+{
+	text-align: left;
+	padding: 5px;
+	color: #FFF;
+	background: #444;
+}
+.expandable IMG
+{
+	vertical-align: middle;
+/*Todo: See if there is an alternative to this negative margin*/
+	margin-top: -4px;
+	margin-right: 5px;
+}
+.expandable P
+{
+	display: inline;
+}
+/*Note: Each level the padding increases by 15px plus 8px for the image*/
+.level-0
+{
+	font-weight: bold;
+	padding: 5px;
+}
+.level-1
+{
+	padding-left: 23px;
+}
+.level-2
+{
+	padding-left: 48px;
+}
+.level-3
+{
+	padding-left: 45px;
+}
+.not-started
+{
+	color: #FF1E00;
+}
+.not-submitted
+{
+	color: #00A6CB;
+}
+.AppearHighlight
+{
+	background: #FDFFDB;
+}
