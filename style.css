@@ -2,7 +2,276 @@
 Blue:00A6CB
 Yellow: eefd00
 Grey: 444, 999, ececec
-Common Styles
+Reset
+*
+* HTML5 ✰ Boilerplate
+*
+* style.css contains a reset, font normalization and some base styles.
+*
+* Credit is left where credit is due.
+* Much inspiration was taken from these projects:
+* - yui.yahooapis.com/2.8.1/build/base/base.css
+* - camendesign.com/design/
+* - praegnanz.de/weblog/htmlcssjs-kickstart
+ 
+*
+* html5doctor.com Reset Stylesheet (Eric Meyer's Reset Reloaded + HTML5 baseline)
+* v1.6.1 2010-09-17 | Authors: Eric Meyer & Richard Clark
+* html5doctor.com/html-5-reset-stylesheet/
+ */
+HTML, BODY, DIV, SPAN, OBJECT, IFRAME, H1, H2, H3, H4, H5, H6, P, BLOCKQUOTE, PRE, ABBR, ADDRESS, CITE, CODE, DEL, DFN, EM, IMG, INS, KBD, Q, SAMP, SMALL, STRONG, SUB, SUP, VAR, B, I, DL, DT, DD, OL, UL, LI, FIELDSET, FORM, LABEL, LEGEND, TABLE, CAPTION, TBODY, TFOOT, THEAD, TR, TH, TD, ARTICLE, ASIDE, CANVAS, DETAILS, FIGCAPTION, FIGURE, FOOTER, HEADER, HGROUP, MENU, NAV, SECTION, SUMMARY, TIME, MARK, AUDIO, VIDEO
+{
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit 1em sans-serif;
+	vertical-align: baseline;
+}
+ARTICLE, ASIDE, DETAILS, FIGCAPTION, FIGURE, FOOTER, HEADER, HGROUP, MENU, NAV, SECTION
+{
+	display: block;
+}
+BLOCKQUOTE, Q
+{
+	quotes: none;
+}
+BLOCKQUOTE:before, BLOCKQUOTE:after, Q:before, Q:after
+{
+	content: "";
+	content: none;
+}
+INS
+{
+	background-color: #FF9;
+	color: #000;
+	text-decoration: none;
+}
+MARK
+{
+	background-color: #FF9;
+	color: #000;
+	font-style: italic;
+	font-weight: bold;
+}
+DEL
+{
+	text-decoration: line-through;
+}
+ABBR[title], DFN[title]
+{
+	border-bottom: 1px dotted #000000;
+	cursor: help;
+}
+TABLE
+{
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+HR
+{
+	display: block;
+	height: 1px;
+	border: 0;
+	border-top: 1px solid #CCC;
+	margin: 1em 0;
+	padding: 0;
+}
+INPUT, SELECT
+{
+	vertical-align: middle;
+}
+/**
+* Font normalization inspired by YUI Library's fonts.css: developer.yahoo.com/yui/
+ */
+BODY
+{
+	font: 13px/1.231 sans-serif;
+	=font-size: small;
+}
+/*Hack retained to preserve specificity*/
+SELECT, INPUT, TEXTAREA, BUTTON
+{
+	font: 99% sans-serif;
+}
+/*Normalize monospace sizing:
+en.wikipedia.org/wiki/MediaWiki_talk:Common.css/Archive_11#Teletype_style_fix_for_Chrome*/
+PRE, CODE, KBD, SAMP
+{
+	font-family: monospace, sans-serif;
+}
+/**
+* Minimal base styles.
+ 
+Always force a scrollbar in non-IE*/
+HTML
+{
+	overflow-y: scroll;
+}
+/*Accessible focus treatment: people.opera.com/patrickl/experiments/keyboard/test*/
+A:hover, A:active
+{
+	outline: none;
+}
+UL, OL
+{
+	margin-left: 2em;
+}
+OL
+{
+	list-style-type: decimal;
+}
+/*Remove margins for navigation lists*/
+NAV UL, NAV LI
+{
+	margin: 0;
+	list-style: none;
+	list-style-image: none;
+}
+SMALL
+{
+	font-size: 85%;
+}
+STRONG, TH
+{
+	font-weight: bold;
+}
+TD
+{
+	vertical-align: top;
+}
+/*Set sub, sup without affecting line-height: gist.github.com/413930*/
+SUB, SUP
+{
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+}
+SUP
+{
+	top: -0.5em;
+}
+SUB
+{
+	bottom: -0.25em;
+}
+PRE
+{
+/*www.pathf.com/blogs/2008/05/formatting-quoted-code-in-blog-posts-css21-white-space-pre-wrap/*/
+	white-space: pre;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+	padding: 15px;
+}
+TEXTAREA
+{
+	overflow: auto;
+}
+/*www.sitepoint.com/blogs/2010/08/20/ie-remove-textarea-scrollbars/*/
+.ie6 LEGEND, .ie7 LEGEND
+{
+	margin-left: -7px;
+}
+/*Align checkboxes, radios, text inputs with their label by: Thierry Koblentz tjkdesign.com/ez-css/css/base.css*/
+INPUT[type="radio"]
+{
+	vertical-align: text-bottom;
+}
+INPUT[type="checkbox"]
+{
+	vertical-align: bottom;
+}
+.ie7 INPUT[type="checkbox"]
+{
+	vertical-align: baseline;
+}
+.ie6 INPUT
+{
+	vertical-align: text-bottom;
+}
+/*Hand cursor on clickable input elements*/
+LABEL, INPUT[type="button"], INPUT[type="submit"], INPUT[type="image"], BUTTON
+{
+	cursor: pointer;
+}
+/*Webkit browsers add a 2px margin outside the chrome of form elements*/
+BUTTON, INPUT, SELECT, TEXTAREA
+{
+	margin: 0;
+}
+/*Colors for form validity*/
+INPUT:valid, TEXTAREA:valid
+{
+}
+INPUT:invalid, TEXTAREA:invalid
+{
+	border-radius: 1px;
+	-moz-box-shadow: 0px 0px 5px red;
+	-webkit-box-shadow: 0px 0px 5px red;
+	box-shadow: 0px 0px 5px #FF0000;
+}
+.no-boxshadow INPUT:invalid, .no-boxshadow TEXTAREA:invalid
+{
+	background-color: #F0DDDD;
+}
+/*These selection declarations have to be separate
+No text-shadow: twitter.com/miketaylr/status/12228805301
+Also: hot pink!*/
+::-moz-selection
+{
+	background: #00A6CB;
+	color: #FFF;
+	text-shadow: none;
+}
+::selection
+{
+	background: #00A6CB;
+	color: #FFF;
+	text-shadow: none;
+}
+/*j.mp/webkit-tap-highlight-color*/
+A:link
+{
+	-webkit-tap-highlight-color: #00A6CB;
+}
+/*Make buttons play nice in IE:
+www.viget.com/inspire/styling-the-button-element-in-internet-explorer/*/
+BUTTON
+{
+	width: auto;
+	overflow: visible;
+}
+/*Bicubic resizing for non-native sized IMG:
+code.flickr.com/blog/2008/11/12/on-ui-quality-the-little-things-client-side-image-resizing/*/
+.ie7 IMG
+{
+	-ms-interpolation-mode: bicubic;
+}
+/**
+* You might tweak these..
+ */
+BODY, SELECT, INPUT, TEXTAREA
+{
+/*#444 looks better than black: twitter.com/H_FJ/statuses/11800719859*/
+	color: #444;
+/*Set your base font here, to apply evenly
+font-family: Georgia, serif;*/
+}
+/*Headers (h1, h2, etc) have no default font-size or margin; define those yourself*/
+H1, H2, H3, H4, H5, H6
+{
+	font-weight: bold;
+}
+A, A:active, A:visited
+{
+	color: #00A6CB;
+}
+A:hover
+{
+	background: #00A6CB;
+	color: #FFF;
+}
+/*Common Styles
 Appear this style to any element that appears. The background should fade in and fade out*/
 .AppearHighlight
 {
@@ -11,101 +280,8 @@ Appear this style to any element that appears. The background should fade in and
 /*Styles*/
 .report-container
 {
-	font: 1em Arial;
-	color: #444;
-}
-A.button
-{
-	margin-bottom: 10px;
-	color: #444;
-	padding: 0 10px 4px 0;
-	background: -webkit-gradient( linear, left bottom, left top, color-stop(0.24, rgb(242,242,242)), color-stop(0.65, rgb(252,252,252)) );
-	background: -moz-linear-gradient( center bottom, rgb(242,242,242) 24%, rgb(252,252,252) 65% );
-	-webkit-border-radius: 4px;
-	-moz-border-radius: 4px;
-	border-radius: 4px;
-	border: 1px solid #D4D4D4;
-	-moz-box-shadow: 0px 3px 4px rgba(0,0,2,.1);
-	-webkit-box-shadow: 0px 1px 4px rgba(0,0,2,.1);
-	box-shadow: 0px 3px 4px rgba(0, 0, 2, 0.1);
-}
-A.button:hover
-{
-	color: #00A6CB;
-}
-A.button:active
-{
-	margin: 1px 0 0;
-}
-A.download-csv
-{
-	float: right;
-	background: url(download.png) no-repeat 6px 2px;
-	padding-left: 30px;
-	padding-top: 6px;
-	padding-bottom: 6px;
-}
-A.download-csv:link
-{
-	text-decoration: none;
-}
-DIV.menu A.download-csv:visited
-{
-	text-decoration: none;
-}
-DIV.menu A.download-csv:hover
-{
-	text-decoration: none;
-	background: url(download-hover.png) no-repeat 6px 2px;
-}
-H2
-{
-	font-size: 1.5em;
-	color: #444;
-	margin: 0 0 10px;
-}
-DIV.menu
-{
-	padding: 5px;
-	margin-bottom: 10px;
-	font-weight: bold;
-}
-DIV.menu A.menu-item
-{
-	margin-right: 10px;
-	padding: 8px;
-	background: -webkit-gradient( linear, left bottom, left top, color-stop(0.24, rgb(242,242,242)), color-stop(0.65, rgb(252,252,252)) );
-	background: -moz-linear-gradient( center bottom, rgb(242,242,242) 24%, rgb(252,252,252) 65% );
-	-webkit-border-radius: 4px;
-	-moz-border-radius: 4px;
-	border-radius: 4px;
-	border: 1px solid #D4D4D4;
-	-moz-box-shadow: 0px 3px 4px rgba(0,0,2,.1);
-	-webkit-box-shadow: 0px 1px 4px rgba(0,0,2,.1);
-	box-shadow: 0px 3px 4px rgba(0, 0, 2, 0.1);
-}
-DIV.menu A.menu-item IMG
-{
-	border: none;
-	margin-bottom: -8px;
-}
-DIV.key-values UL
-{
-	margin: 0 0 10px;
-	padding: 0 0 0 5px;
-	list-style: none;
-}
-DIV.key-values UL LI
-{
-	display: inline;
-	font-weight: bold;
 	font-size: 1.2em;
-	margin-right: 20px;
-}
-DIV.key-values UL LI SPAN
-{
-	color: #999;
-	font-size: 0.8em;
+	color: #444;
 }
 TABLE
 {
@@ -119,6 +295,11 @@ TR:hover
 {
 	background: #ECECEC;
 }
+TD
+{
+	margin: 0px;
+	padding: 5px;
+}
 TH
 {
 	text-align: left;
@@ -126,33 +307,32 @@ TH
 	color: #FFF;
 	background: #444;
 }
-TR.TimesheetManager TD
-{
-	font-weight: bold;
-	padding: 10px 0px 10px 5px;
-}
-TR.TimesheetManager TD IMG
+.expandable IMG
 {
 	vertical-align: middle;
 /*Todo: See if there is an alternative to this negative margin*/
-	margin-top: -3px;
+	margin-top: -4px;
 	margin-right: 5px;
 }
-TD
+.expandable P
 {
-	margin: 0px;
+	display: inline;
+}
+/*Note: Each level the padding increases by 15px plus 8px for the image*/
+.level-0
+{
+	font-weight: bold;
 	padding: 5px;
 }
-/*Note: Each level the padding increases by 15px*/
-TD.level-1
+.level-1
 {
-	padding-left: 15px;
+	padding-left: 23px;
 }
-TD.level-2
+.level-2
 {
-	padding-left: 30px;
+	padding-left: 48px;
 }
-TD.level-3
+.level-3
 {
 	padding-left: 45px;
 }
@@ -163,58 +343,6 @@ TD.level-3
 .not-submitted
 {
 	color: #00A6CB;
-}
-/*Forms*/
-DIV.options
-{
-	background: #EFEFEF;
-	padding: 10px;
-	margin: 20px 0 10px;
-	border: 1px solid #DDD;
-}
-INPUT.options-input
-{
-	width: 300px;
-}
-SELECT
-{
-}
-.options-menu IMG
-{
-	margin: 0 0 -7px 10px;
-	border: none;
-}
-DIV.options A
-{
-	margin: 20px 0 10px;
-}
-DIV.options UL
-{
-	margin: 5px 0 0;
-	padding: 0;
-}
-DIV.options LI
-{
-	display: inline;
-}
-FIELDSET
-{
-	border: none;
-	margin: 0;
-	padding: 5px 0;
-}
-.secondary-button-option
-{
-	color: #444;
-	padding: 2px;
-}
-.secondary-button-option:hover
-{
-	background: #444;
-	color: #FFF;
-}
-FIELDSET.AndOrSelector
-{
 }
 .AppearHighlight
 {
