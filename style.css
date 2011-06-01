@@ -13,7 +13,7 @@ Reset
 * - yui.yahooapis.com/2.8.1/build/base/base.css
 * - camendesign.com/design/
 * - praegnanz.de/weblog/htmlcssjs-kickstart
- 
+
 *
 * html5doctor.com Reset Stylesheet (Eric Meyer's Reset Reloaded + HTML5 baseline)
 * v1.6.1 2010-09-17 | Authors: Eric Meyer & Richard Clark
@@ -102,7 +102,7 @@ PRE, CODE, KBD, SAMP
 }
 /**
 * Minimal base styles.
- 
+
 Always force a scrollbar in non-IE*/
 HTML
 {
@@ -324,9 +324,18 @@ TH
 	font-weight: bold;
 	padding: 5px;
 }
+.level-0-no-image
+{
+	font-weight: bold;
+	padding-left: 23px;
+}
 .level-1
 {
 	padding-left: 23px;
+}
+.level-1-no-image
+{
+	padding-left: 48px;
 }
 .level-2
 {
