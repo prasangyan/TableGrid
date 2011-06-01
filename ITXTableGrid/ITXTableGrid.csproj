@@ -67,6 +67,7 @@
     <Content Include="Images\Untitled-1.png" />
     <Content Include="ITXTableGrid.js" />
     <Content Include="jquery-1.6.1.min.js" />
+    <Content Include="jshashset.js" />
     <Content Include="style.css" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
