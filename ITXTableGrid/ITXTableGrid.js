@@ -18,8 +18,18 @@ $.fn.itxtablegrid = function (opt) {
             // header section
             var header = jQuery("<tr>", {});
             if (options.columnNames.length > 0) {
-                for (var colIndex = 0; colIndex < options.columnNames.length; colIndex++) {
-                    var column = jQuery("<th>", {});
+                var colIndex = 0;
+
+                var column = jQuery("<th>", {});
+                column.append(options.columnNames[0]);
+                header.append(column);
+
+                if (options.groupview) {
+                    colIndex = options.expandLevels;
+                }
+
+                for (; colIndex < options.columnNames.length; colIndex++) {
+                    column = jQuery("<th>", {});
                     column.append(options.columnNames[colIndex]);
                     header.append(column);
                 }
@@ -34,7 +44,9 @@ $.fn.itxtablegrid = function (opt) {
                     BindExpandCollapseEvents();
                 }
                 else {
-                    ArrangeDataTree(BkupData, TreeData, options.expandLevels);
+                    TreeData = ArrangeDataIntoJSObjects(options.data, TreeData, options.expandLevels);
+                    DisplayGroupData_MultiLevels(tbl, TreeData, options.expandByDefault, options.columnWidth, options.columnNames, options.expandLevels);
+                    BindExpandCollapseEvents();
                 }
             }
             else {
@@ -56,50 +68,232 @@ $.fn.itxtablegrid = function (opt) {
             }
         }
     });
-    function ArrangeDataTree(Data, TreeData, NoOfLevels) {
+
+    function GroupData(Data, KeyColumnIndex) {
+        processedIndex = []
+        var Level1Group = [];
+        // grouping first field
         for (var rowIndex = 0; rowIndex < Data.length; rowIndex++) {
-            if (processedIndex[rowIndex] == undefined) {
-                var row = {};
-                row.keyname = Data[rowIndex][0].toString();
-                var keyrow = [];
-                for (var colindex = 0; colindex < Data[rowIndex].length; colindex++)
-                    keyrow[colindex] = Data[rowIndex][colindex].toString();
-                row.keyrow = keyrow;
-                processedIndex[rowIndex] = true;
-                row.childrows = GetChildRows(Data[rowIndex][0].toString(), Data, 0);
-                TreeData[TreeData.length] = row;
-            }
-        }
-        // Second Level Grouping with arranged data tree
-        for (var rowIndex = 0; rowIndex < TreeData.length; rowIndex++) {
-            for (var childrowIndex = 0; childrowIndex < TreeData[rowIndex].childrows.length; childrowIndex++) {
-                debugger;
-            }
-        }
-    }
-    function GetChildRows(Keyname, Data, LevelIndex) {
-        var OutputRows = [];
-        var value = Keyname.toString().toLowerCase();
-        value = $.trim(value);
-        for (var rowIndex = 0; rowIndex < Data.length; rowIndex++) {
-            if (processedIndex[rowIndex] == undefined) {
-                var comparevalue = Data[rowIndex][LevelIndex].toString().toLowerCase();
-                comparevalue = $.trim(comparevalue);
-                if (comparevalue == value) {
-                    var outputrow = {};
-                    outputrow.keyname = Data[rowIndex][LevelIndex + 1].toString().toLowerCase();
-                    var keyrow = [];
-                    for (var colindex = LevelIndex + 1; colindex < Data[rowIndex].length; colindex++)
-                        keyrow[colindex] = Data[rowIndex][colindex].toString();
-                    outputrow.keyrow = keyrow;
-                    outputrow.childrows = [];
-                    OutputRows[OutputRows.length] = outputrow;
-                    processedIndex[rowIndex] = true;
+            if (processedIndex[rowIndex] == undefined && Data[rowIndex] != undefined) {
+                if (Level1Group[Level1Group.length] == undefined)
+                    Level1Group[Level1Group.length] = [];
+                var LevelIndex = Level1Group.length - 1;
+                var key_value = Data[rowIndex][KeyColumnIndex].toString().toLowerCase();
+                key_value = $.trim(key_value);
+                for (var rindex = 0; rindex < Data.length; rindex++) {
+                    if (processedIndex[rindex] == undefined && Data[rindex] != undefined) {
+                        var cur_value = Data[rindex][KeyColumnIndex].toString().toLowerCase();
+                        var cur_value = $.trim(cur_value);
+                        if (key_value == cur_value) {
+                            var temprow = [];
+                            for (var colindex = 0; colindex < Data[rindex].length; colindex++) {
+                                temprow[colindex] = Data[rindex][colindex].toString();
+                            }
+                            processedIndex[rindex] = true;
+                            Level1Group[LevelIndex][Level1Group[LevelIndex].length] = temprow;
+                        }
+                    }
                 }
             }
         }
-        return OutputRows;
+        return Level1Group;
     }
+
+    function ArrangeDataIntoJSObjects(Data, TreeData, ExpandLevels) {
+        // grouping second level here
+        var Level1Group = GroupData(Data, 0);
+        var Level2Group = [];
+
+        for (var groupIndex = 0; groupIndex < Level1Group.length; groupIndex++) {
+            if (Level1Group[groupIndex].length > 1) {
+                var subtree = [];
+                subtree.parent_node_name = Level1Group[groupIndex][0][0];
+                subtree.child_nodes = [];
+                var childnodes = GroupData(Level1Group[groupIndex], 1);
+                // level 2 scrapping here
+                for (var groupIndex2 = 0; groupIndex2 < childnodes.length; groupIndex2++) {
+                    if (childnodes[groupIndex2].length > 1) {
+                        var subtree2 = [];
+                        subtree2.parent_node_name = childnodes[groupIndex2][0][1]
+                        if (ExpandLevels > 2) {
+                            var childnodes3 = GroupData(Level1Group[groupIndex], 2);
+                            subtree2.child_nodes = [];
+
+                            // level 3 scrapping here
+                            for (var groupIndex3 = 0; groupIndex3 < childnodes3.length; groupIndex3++) {
+                                if (childnodes3[groupIndex3].length > 1) {
+                                    var subtree3 = [];
+                                    subtree3.parent_node_name = childnodes3[groupIndex3][0][2]
+                                    subtree3.child_nodes = childnodes3[groupIndex3];  // stoping the levels here
+                                    subtree2.child_nodes[subtree2.child_nodes.length] = subtree3;
+                                }
+                                else if (childnodes3[groupIndex3].length == 1) {
+                                    var temprow = [];
+                                    for (var colindex = 0; colindex < childnodes[groupIndex2][0].length; colindex++) {
+                                        temprow[colindex] = childnodes[groupIndex2][0][colindex].toString();
+                                    }
+                                    subtree2.child_nodes[subtree2.child_nodes.length] = temprow;
+                                }
+                            }
+                        }
+                        else {
+                            subtree2.child_nodes = childnodes[groupIndex2];
+                        }
+                        subtree.child_nodes[subtree.child_nodes.length] = subtree2;
+                    }
+                    else if (childnodes[groupIndex2].length == 1) {
+                        var temprow = [];
+                        for (var colindex = 0; colindex < childnodes[groupIndex2][0].length; colindex++) {
+                            temprow[colindex] = childnodes[groupIndex2][0][colindex].toString();
+                        }
+                        subtree.child_nodes[subtree.child_nodes.length] = temprow;
+                    }
+                }
+                Level2Group[Level2Group.length] = subtree;
+            }
+            else if (Level1Group[groupIndex].length == 1) {
+                var temprow = [];
+                for (var colindex = 0; colindex < Level1Group[groupIndex][0].length; colindex++) {
+                    temprow[colindex] = Level1Group[groupIndex][0][colindex].toString();
+                }
+                Level2Group[Level2Group.length] = temprow;
+            }
+        }
+        return Level2Group;
+    }
+
+    function DisplayGroupData_MultiLevels(Table, TreeData, expandByDefault, columnWidth, columnNames, noofexpandColumns) {
+        for (var rowIndex1 = 0; rowIndex1 < TreeData.length; rowIndex1++) {
+            var row1 = jQuery("<tr>", {});
+            var html1 = "";
+            if (TreeData[rowIndex1].parent_node_name == undefined) {
+                // only a row is there, print without expand image
+                html1 = "<td><div class='expandable level-0'><p>" + TreeData[rowIndex1][0] + "</p></div></td>";
+                row1.append(html1);
+                // adding additional columns for top level row
+                for (var ColIndex = noofexpandColumns; ColIndex < TreeData[rowIndex1].length; ColIndex++) {
+                    html1 = "<td>" + TreeData[rowIndex1][ColIndex].toString() + "</td>";
+                    row1.append(html1);
+                }
+                Table.append(row1);
+            }
+            else {
+                // level 1 starts here
+                var TreeData1 = TreeData[rowIndex1];
+                var td = jQuery("<td>", {});
+                if (columnWidth[0] != undefined)
+                    td.attr('width', columnWidth[0]);
+                if (expandByDefault) {
+                    td.append("<div class='expandable level-0'><img src='Images/Expand.png' ExpandStatus='1' /><p>" + TreeData1.parent_node_name + "</p></div>");
+                }
+                else {
+                    td.append("<div class='expandable level-0'><img src='Images/Collapse.png' ExpandStatus='0' /><p>" + TreeData1.parent_node_name + "</p></div>");
+                }
+                row1.append(td);
+                // adding additional columns for level 1
+                for (var ColIndex = noofexpandColumns; ColIndex < columnNames.length; ColIndex++) {
+                    td = jQuery("<td>", {});
+                    if (columnWidth[ColIndex + 1] != undefined)
+                        td.attr('width', columnWidth[ColIndex + 1]);
+                    row1.append(td);
+                }
+                Table.append(row1);
+                // level 1 rows
+                var TreeData2 = TreeData[rowIndex1].child_nodes;
+                for (var child_row1 = 0; child_row1 < TreeData2.length; child_row1++) {
+                    row1 = jQuery("<tr>", { "KeyName": TreeData1.parent_node_name });
+                    if (TreeData2[child_row1].parent_node_name == undefined) {
+                        // only a row is there, print without expand image
+                        html1 = "<td><div class='expandable level-1'><p>" + TreeData2[child_row1][1] + "</p></div></td>";
+                        row1.append(html1);
+                        // adding additional columns for top level row
+                        for (var ColIndex = noofexpandColumns; ColIndex < TreeData2[child_row1].length; ColIndex++) {
+                            html1 = "<td>" + TreeData2[child_row1][ColIndex].toString() + "</td>";
+                            row1.append(html1);
+                        }
+                        Table.append(row1);
+                    }
+                    else {
+                        // level 2 starts here
+                        var TreeData3 = TreeData2[child_row1];
+                        var td = jQuery("<td>", {});
+                        if (columnWidth[0] != undefined)
+                            td.attr('width', columnWidth[0]);
+                        if (expandByDefault) {
+                            td.append("<div class='expandable level-1'><img src='Images/Expand.png' ExpandStatus='1' /><p>" + TreeData3.parent_node_name + "</p></div>");
+                        }
+                        else {
+                            td.append("<div class='expandable level-1'><img src='Images/Collapse.png' ExpandStatus='0' /><p>" + TreeData3.parent_node_name + "</p></div>");
+                        }
+                        row1.append(td);
+                        // adding additional columns for level 1
+                        for (var ColIndex = noofexpandColumns; ColIndex < columnNames.length; ColIndex++) {
+                            td = jQuery("<td>", {});
+                            if (columnWidth[ColIndex + 1] != undefined)
+                                td.attr('width', columnWidth[ColIndex + 1]);
+                            row1.append(td);
+                        }
+                        Table.append(row1);
+                        // Level 2 rows
+                        var TreeData4 = TreeData2[child_row1].child_nodes;
+                        for (var child_row2 = 0; child_row2 < TreeData4.length; child_row2++) {
+                            row1 = jQuery("<tr>", { "KeyName": TreeData3.parent_node_name });
+                            if (TreeData4[child_row2].parent_node_name == undefined) {
+                                // only a row is there, print without expand image
+                                html1 = "<td><div class='expandable level-2'><p>" + TreeData4[child_row2][2] + "</p></div></td>";
+                                row1.append(html1);
+                                // adding additional columns for top level row
+                                for (var ColIndex = noofexpandColumns; ColIndex < TreeData4[child_row2].length; ColIndex++) {
+                                    html1 = "<td>" + TreeData4[child_row2][ColIndex].toString() + "</td>";
+                                    row1.append(html1);
+                                }
+                                Table.append(row1);
+                            }
+                            else {
+                                // Level 3 starts here
+                                var TreeData5 = TreeData4[child_row2];
+                                var td = jQuery("<td>", {});
+                                if (columnWidth[0] != undefined)
+                                    td.attr('width', columnWidth[0]);
+                                if (expandByDefault) {
+                                    td.append("<div class='expandable level-2'><img src='Images/Expand.png' ExpandStatus='1' /><p>" + TreeData5.parent_node_name + "</p></div>");
+                                }
+                                else {
+                                    td.append("<div class='expandable level-2'><img src='Images/Collapse.png' ExpandStatus='0' /><p>" + TreeData5.parent_node_name + "</p></div>");
+                                }
+                                row1.append(td);
+                                // adding additional columns for level 1
+                                for (var ColIndex = noofexpandColumns; ColIndex < columnNames.length; ColIndex++) {
+                                    td = jQuery("<td>", {});
+                                    if (columnWidth[ColIndex + 1] != undefined)
+                                        td.attr('width', columnWidth[ColIndex + 1]);
+                                    row1.append(td);
+                                }
+                                Table.append(row1);
+                                // Level 3 rows
+                                var TreeData6 = TreeData5.child_nodes;
+                                for (var child_row3 = 0; child_row3 < TreeData6.length; child_row3++) {
+                                    row1 = jQuery("<tr>", { "KeyName": TreeData5.parent_node_name });
+                                    if (TreeData6[child_row3].parent_node_name == undefined) {
+                                        // only a row is there, print without expand image
+                                        html1 = "<td><div class='expandable level-3'><p>" + TreeData6[child_row3][2] + "</p></div></td>";
+                                        row1.append(html1);
+                                        // adding additional columns for top level row
+                                        for (var ColIndex = noofexpandColumns; ColIndex < TreeData6[child_row3].length; ColIndex++) {
+                                            html1 = "<td>" + TreeData6[child_row3][ColIndex].toString() + "</td>";
+                                            row1.append(html1);
+                                        }
+                                        Table.append(row1);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     function ArrangeDataTree_level_1(Data, TreeData) {
         if (Data.length > 0) {
             if (Data[0].length > 0) {
@@ -195,15 +389,25 @@ $.fn.itxtablegrid = function (opt) {
     function BindExpandCollapseEvents() {
         $('tr td div img').click(function () {
             if ($(this).attr('ExpandStatus') == "1") {
-                $('tr[KeyName="' + $(this).parent().find('p').html() + '"]').fadeOut(500);
+                $('tr[KeyName="' + $(this).parent().find('p').html() + '"]').fadeIn(500);
                 $(this).attr('ExpandStatus', 0);
                 $(this).attr('src', '/Images/Expand.png');
             }
             else {
-                $('tr[KeyName="' + $(this).parent().find('p').html() + '"]').fadeIn(500);
+                $('tr[KeyName="' + $(this).parent().find('p').html() + '"]').fadeOut(500);
                 $(this).attr('ExpandStatus', 1);
                 $(this).attr('src', '/Images/Collapse.png');
             }
+        }).mouseover(function () {
+            if ($(this).attr('ExpandStatus') == "1")
+                $(this).attr('src', '/Images/Expand-Hover.png');
+            else
+                $(this).attr('src', '/Images/Collapse-hover.png');
+        }).mouseout(function () {
+            if ($(this).attr('ExpandStatus') == "1")
+                $(this).attr('src', '/Images/Expand.png');
+            else
+                $(this).attr('src', '/Images/Collapse.png');
         });
     }
     function DisplayTreeData(Table, TreeData, expandByDefault) {
