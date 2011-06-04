@@ -13,13 +13,13 @@ Reset
 * - yui.yahooapis.com/2.8.1/build/base/base.css
 * - camendesign.com/design/
 * - praegnanz.de/weblog/htmlcssjs-kickstart
- 
+
 *
 * html5doctor.com Reset Stylesheet (Eric Meyer's Reset Reloaded + HTML5 baseline)
 * v1.6.1 2010-09-17 | Authors: Eric Meyer & Richard Clark
 * html5doctor.com/html-5-reset-stylesheet/
  */
-HTML, BODY, DIV, SPAN, OBJECT, IFRAME, H1, H2, H3, H4, H5, H6, P, BLOCKQUOTE, PRE, ABBR, ADDRESS, CITE, CODE, DEL, DFN, EM, IMG, INS, KBD, Q, SAMP, SMALL, STRONG, SUB, SUP, VAR, B, I, DL, DT, DD, OL, UL, LI, FIELDSET, FORM, LABEL, LEGEND, TABLE, CAPTION, TBODY, TFOOT, THEAD, TR, TH, TD, ARTICLE, ASIDE, CANVAS, DETAILS, FIGCAPTION, FIGURE, FOOTER, HEADER, HGROUP, MENU, NAV, SECTION, SUMMARY, TIME, MARK, AUDIO, VIDEO
+HTML, BODY, DIV, SPAN, OBJECT, IFRAME, H1, H2, H3, H4, H5, H6, P, BLOCKQUOTE, PRE, ABBR, ADDRESS, CITE, CODE, DEL, DFN, EM, IMG, INS, KBD, Q, SAMP, SMALL, STRONG, SUB, SUP, VAR, B, I, DL, DT, DD, OL, UL, LI, FIELDSET, FORM, LABEL, LEGEND, TABLE, CAPTION, TBODY, TFOOT, THEAD, TR, TH, TD, ARTICLE, ASIDE, CANVAS, DETAILS, FIGCAPTION, FIGURE, FOOTER, HEADER, HGROUP, MENU, NAV, SECTION
 {
 	margin: 0;
 	padding: 0;
@@ -102,7 +102,7 @@ PRE, CODE, KBD, SAMP
 }
 /**
 * Minimal base styles.
- 
+
 Always force a scrollbar in non-IE*/
 HTML
 {
@@ -334,7 +334,7 @@ TH
 }
 .level-3
 {
-	padding-left: 45px;
+	padding-left: 72px;
 }
 .not-started
 {

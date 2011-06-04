@@ -389,12 +389,14 @@ $.fn.itxtablegrid = function (opt) {
     function BindExpandCollapseEvents() {
         $('tr td div img').click(function () {
             if ($(this).attr('ExpandStatus') == "1") {
-                $('tr[KeyName="' + $(this).parent().find('p').html() + '"]').fadeIn(500);
+                ExpandorCollapseElements($(this).parent().find('p').html(), false);
+                //$('tr[KeyName="' + $(this).parent().find('p').html() +'"]').fadeIn(500);
                 $(this).attr('ExpandStatus', 0);
                 $(this).attr('src', '/Images/Expand.png');
             }
             else {
-                $('tr[KeyName="' + $(this).parent().find('p').html() + '"]').fadeOut(500);
+                ExpandorCollapseElements($(this).parent().find('p').html(), true);
+                //$('tr[KeyName="' + $(this).parent().find('p').html() + '"]').fadeOut(500);
                 $(this).attr('ExpandStatus', 1);
                 $(this).attr('src', '/Images/Collapse.png');
             }
@@ -410,6 +412,22 @@ $.fn.itxtablegrid = function (opt) {
                 $(this).attr('src', '/Images/Collapse.png');
         });
     }
+
+    function ExpandorCollapseElements(keyname, IsExpand) {
+        var elements = $('tr[KeyName="' + keyname + '"]');
+        if (IsExpand)
+            elements.fadeOut(500);
+        else
+            elements.fadeIn(500);
+        elements.find("div.expandable img").attr('ExpandStatus', "0");
+        elements.find("div.expandable img").attr('src', '/Images/Collapse.png');
+        elements.each(function () {
+            $(this).find("div.expandable img").each(function () {
+                ExpandorCollapseElements($(this).parent().find('p').html(), IsExpand);
+            });
+        });
+    }
+
     function DisplayTreeData(Table, TreeData, expandByDefault) {
         for (var rowIndex = 0; rowIndex < TreeData.length; rowIndex++) {
             var row = jQuery("<tr>", { "KeyName": TreeData[rowIndex].Keyname });
