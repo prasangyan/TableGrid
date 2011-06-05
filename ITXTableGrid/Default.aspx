@@ -11,14 +11,17 @@
         $(function () {
             var Options = {
                 columnNames: ["Name", "Period", "Status", "another column1", "another column2", "another column3"],
-                data: [["some name", "some period", "some status", "some value11", "somevalue12", "some value13"],
+                data: [["some name", "some perioddsf gsdf gsdf gdsf gdfs gdsfg dsfg sdfgs", "some status", "some value11", "somevalue12", "some value13"],
                        ["some name2", "some period2", "some status2", "some value21", "somevalue22", "some value23"],
                        ["some name3", "some period3", "some status3", "some value31", "somevalue32", "some value33"],
                        ["some name", "some period3", "some status3", "some value31", "somevalue32", "some value33"],
-                       ["some name2", "some period2", "some status2", "some value21", "somevalue22", "some value23"],
-                      ],
-                treeview: true
+                       ["some name2", "some period2", "some status2", "some value21", "somevalue22", "some value23"]],
+                groupview: true,
+                expandLevels: 2,
+                expandByDefault: false,
+                columnWidth: ["400px", "100px"]
             };
+
             $('.report-container').itxtablegrid(Options);
         });
     </script>
