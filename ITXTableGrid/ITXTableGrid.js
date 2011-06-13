@@ -8,7 +8,8 @@ $.fn.itxtablegrid = function (opt) {
             groupview: false,
             expandLevels: 1,
             expandByDefault: true,
-            columnWidth: []
+            columnWidth: [],
+            treeview: false
         };
         var options = $.extend(defaults, opt);
         var TreeData = new Array();
@@ -19,15 +20,13 @@ $.fn.itxtablegrid = function (opt) {
             var header = jQuery("<tr>", {});
             if (options.columnNames.length > 0) {
                 var colIndex = 0;
-
                 var column = jQuery("<th>", {});
                 column.append(options.columnNames[0]);
                 header.append(column);
-
                 if (options.groupview) {
                     colIndex = options.expandLevels;
-                }
-
+                } else if (options.treeview)
+                    colIndex = 1;
                 for (; colIndex < options.columnNames.length; colIndex++) {
                     column = jQuery("<th>", {});
                     column.append(options.columnNames[colIndex]);
@@ -50,25 +49,31 @@ $.fn.itxtablegrid = function (opt) {
                 }
             }
             else {
-                for (var rowIndex = 0; rowIndex < options.data.length; rowIndex++) {
-                    var row = jQuery("<tr>", {});
-                    for (var colIndex = 0; colIndex < options.data[rowIndex].length; colIndex++) {
-                        if (colIndex == 0) {
-                            var html = "<td><div class='expandable'><p>" + options.data[rowIndex][colIndex] + "</p></div></td>";
-                            row.append(html);
+                if (options.treeview) {
+                    TreeData = options.data;
+                    DisplayDataInTree(tbl, options.data, options.expandByDefault, options.columnWidth, 0, "");
+                    BindExpandCollapseEvents_Treeview();
+                }
+                else {
+                    for (var rowIndex = 0; rowIndex < options.data.length; rowIndex++) {
+                        var row = jQuery("<tr>", {});
+                        for (var colIndex = 0; colIndex < options.data[rowIndex].length; colIndex++) {
+                            if (colIndex == 0) {
+                                var html = "<td><div class='expandable'><p>" + options.data[rowIndex][colIndex] + "</p></div></td>";
+                                row.append(html);
+                            }
+                            else {
+                                var col = jQuery("<td>", {});
+                                col.append(options.data[rowIndex][colIndex]);
+                                row.append(col);
+                            }
                         }
-                        else {
-                            var col = jQuery("<td>", {});
-                            col.append(options.data[rowIndex][colIndex]);
-                            row.append(col);
-                        }
+                        tbl.append(row);
                     }
-                    tbl.append(row);
                 }
             }
         }
     });
-
     function GroupData(Data, KeyColumnIndex) {
         processedIndex = []
         var Level1Group = [];
@@ -98,12 +103,10 @@ $.fn.itxtablegrid = function (opt) {
         }
         return Level1Group;
     }
-
     function ArrangeDataIntoJSObjects(Data, TreeData, ExpandLevels) {
         // grouping second level here
         var Level1Group = GroupData(Data, 0);
         var Level2Group = [];
-
         for (var groupIndex = 0; groupIndex < Level1Group.length; groupIndex++) {
             if (Level1Group[groupIndex].length > 1) {
                 var subtree = [];
@@ -118,7 +121,6 @@ $.fn.itxtablegrid = function (opt) {
                         if (ExpandLevels > 2) {
                             var childnodes3 = GroupData(Level1Group[groupIndex], 2);
                             subtree2.child_nodes = [];
-
                             // level 3 scrapping here
                             for (var groupIndex3 = 0; groupIndex3 < childnodes3.length; groupIndex3++) {
                                 if (childnodes3[groupIndex3].length > 1) {
@@ -161,7 +163,6 @@ $.fn.itxtablegrid = function (opt) {
         }
         return Level2Group;
     }
-
     function DisplayGroupData_MultiLevels(Table, TreeData, expandByDefault, columnWidth, columnNames, noofexpandColumns) {
         for (var rowIndex1 = 0; rowIndex1 < TreeData.length; rowIndex1++) {
             var row1 = jQuery("<tr>", {});
@@ -184,10 +185,10 @@ $.fn.itxtablegrid = function (opt) {
                 if (columnWidth[0] != undefined)
                     td.attr('width', columnWidth[0]);
                 if (expandByDefault) {
-                    td.append("<div class='expandable level-0'><img src='Images/Expand.png' ExpandStatus='1' /><p>" + TreeData1.parent_node_name + "</p></div>");
+                    td.append("<div class='expandable level-0'><img src='/Images/Expand.png' ExpandStatus='1' /><p>" + TreeData1.parent_node_name + "</p></div>");
                 }
                 else {
-                    td.append("<div class='expandable level-0'><img src='Images/Collapse.png' ExpandStatus='0' /><p>" + TreeData1.parent_node_name + "</p></div>");
+                    td.append("<div class='expandable level-0'><img src='/Images/Collapse.png' ExpandStatus='0' /><p>" + TreeData1.parent_node_name + "</p></div>");
                 }
                 row1.append(td);
                 // adding additional columns for level 1
@@ -220,10 +221,10 @@ $.fn.itxtablegrid = function (opt) {
                         if (columnWidth[0] != undefined)
                             td.attr('width', columnWidth[0]);
                         if (expandByDefault) {
-                            td.append("<div class='expandable level-1'><img src='Images/Expand.png' ExpandStatus='1' /><p>" + TreeData3.parent_node_name + "</p></div>");
+                            td.append("<div class='expandable level-1'><img src='/Images/Expand.png' ExpandStatus='1' /><p>" + TreeData3.parent_node_name + "</p></div>");
                         }
                         else {
-                            td.append("<div class='expandable level-1'><img src='Images/Collapse.png' ExpandStatus='0' /><p>" + TreeData3.parent_node_name + "</p></div>");
+                            td.append("<div class='expandable level-1'><img src='/Images/Collapse.png' ExpandStatus='0' /><p>" + TreeData3.parent_node_name + "</p></div>");
                         }
                         row1.append(td);
                         // adding additional columns for level 1
@@ -256,10 +257,10 @@ $.fn.itxtablegrid = function (opt) {
                                 if (columnWidth[0] != undefined)
                                     td.attr('width', columnWidth[0]);
                                 if (expandByDefault) {
-                                    td.append("<div class='expandable level-2'><img src='Images/Expand.png' ExpandStatus='1' /><p>" + TreeData5.parent_node_name + "</p></div>");
+                                    td.append("<div class='expandable level-2'><img src='/Images/Expand.png' ExpandStatus='1' /><p>" + TreeData5.parent_node_name + "</p></div>");
                                 }
                                 else {
-                                    td.append("<div class='expandable level-2'><img src='Images/Collapse.png' ExpandStatus='0' /><p>" + TreeData5.parent_node_name + "</p></div>");
+                                    td.append("<div class='expandable level-2'><img src='/Images/Collapse.png' ExpandStatus='0' /><p>" + TreeData5.parent_node_name + "</p></div>");
                                 }
                                 row1.append(td);
                                 // adding additional columns for level 1
@@ -293,7 +294,6 @@ $.fn.itxtablegrid = function (opt) {
             }
         }
     }
-
     function ArrangeDataTree_level_1(Data, TreeData) {
         if (Data.length > 0) {
             if (Data[0].length > 0) {
@@ -346,10 +346,10 @@ $.fn.itxtablegrid = function (opt) {
                 if (columnWidth[0] != undefined)
                     td.attr('width', columnWidth[0]);
                 if (expandByDefault) {
-                    td.append("<div class='expandable level-0'><img src='Images/Collapse.png' ExpandStatus='1' /><p>" + TreeData[rowIndex].Keyname + "</p></div>");
+                    td.append("<div class='expandable level-0'><img src='/Images/Collapse.png' ExpandStatus='1' /><p>" + TreeData[rowIndex].Keyname + "</p></div>");
                 }
                 else {
-                    td.append("<div class='expandable level-0'><img src='Images/Expand.png' ExpandStatus='0' /><p>" + TreeData[rowIndex].Keyname + "</p></div>");
+                    td.append("<div class='expandable level-0'><img src='/Images/Expand.png' ExpandStatus='0' /><p>" + TreeData[rowIndex].Keyname + "</p></div>");
                 }
                 row.append(td);
                 // adding additional columns for top level row
@@ -387,20 +387,37 @@ $.fn.itxtablegrid = function (opt) {
         }
     }
     function BindExpandCollapseEvents() {
-        $('tr td div img').click(function () {
-            if ($(this).attr('ExpandStatus') == "1") {
-                ExpandorCollapseElements($(this).parent().find('p').html(), false);
-                //$('tr[KeyName="' + $(this).parent().find('p').html() +'"]').fadeIn(500);
-                $(this).attr('ExpandStatus', 0);
-                $(this).attr('src', '/Images/Expand.png');
-            }
-            else {
-                ExpandorCollapseElements($(this).parent().find('p').html(), true);
-                //$('tr[KeyName="' + $(this).parent().find('p').html() + '"]').fadeOut(500);
-                $(this).attr('ExpandStatus', 1);
-                $(this).attr('src', '/Images/Collapse.png');
-            }
-        }).mouseover(function () {
+        var elements = $('tr td div img');
+        elements.click(function () {
+            expandOrcollapase($(this).parent().find('p').html(), $(this), false);
+        })
+        expandOrCollapseMouseEvents(elements);
+    }
+
+    function expandOrcollapase(key, element, Treeview) {
+        if (element.attr('ExpandStatus') == "1") {
+            ExpandorCollapseElements(key, false, Treeview);
+            changeAttributes(element, 1);
+        }
+        else {
+            ExpandorCollapseElements(key, true, Treeview);
+            changeAttributes(element, 0);
+        }
+    }
+
+    function changeAttributes(element, status) {
+        if (status == 1) {
+            element.attr('ExpandStatus', 0);
+            element.attr('src', '/Images/Expand.png');
+        }
+        else {
+            element.attr('ExpandStatus', 1);
+            element.attr('src', '/Images/Collapse.png');
+        }
+    }
+
+    function expandOrCollapseMouseEvents(elements) {
+        elements.mouseover(function () {
             if ($(this).attr('ExpandStatus') == "1")
                 $(this).attr('src', '/Images/Expand-Hover.png');
             else
@@ -413,17 +430,20 @@ $.fn.itxtablegrid = function (opt) {
         });
     }
 
-    function ExpandorCollapseElements(keyname, IsExpand) {
+    function ExpandorCollapseElements(keyname, IsExpand, Treeview) {
         var elements = $('tr[KeyName="' + keyname + '"]');
         if (IsExpand)
-            elements.fadeOut(500);
+            elements.find('td').slideUp(500).fadeOut(500);
         else
-            elements.fadeIn(500);
+            elements.find('td').slideDown(500).fadeIn(500);
         elements.find("div.expandable img").attr('ExpandStatus', "0");
         elements.find("div.expandable img").attr('src', '/Images/Collapse.png');
         elements.each(function () {
             $(this).find("div.expandable img").each(function () {
-                ExpandorCollapseElements($(this).parent().find('p').html(), IsExpand);
+                if (Treeview)
+                    ExpandorCollapseElements($(this).parent().find('p').attr('key'), IsExpand);
+                else
+                    ExpandorCollapseElements($(this).parent().find('p').html(), IsExpand);
             });
         });
     }
@@ -434,9 +454,9 @@ $.fn.itxtablegrid = function (opt) {
             var html = "";
             if (TreeData[rowIndex].childvalues.length > 1) {
                 if (expandByDefault)
-                    html = "<td><div class='expandable level-0'><img src='Images/Expand.png' ExpandStatus='1'/><p>" + TreeData[rowIndex].Keyname + "</p></div></td>";
+                    html = "<td><div class='expandable level-0'><img src='/Images/Expand.png' ExpandStatus='1'/><p>" + TreeData[rowIndex].Keyname + "</p></div></td>";
                 else
-                    html = "<td><div class='expandable level-0'><img src='Images/Collapse.png' ExpandStatus='0'/><p>" + TreeData[rowIndex].Keyname + "</p></div></td>";
+                    html = "<td><div class='expandable level-0'><img src='/Images/Collapse.png' ExpandStatus='0'/><p>" + TreeData[rowIndex].Keyname + "</p></div></td>";
             }
             else {
                 html = "<td><div class='expandable level-0'><p>" + TreeData[rowIndex].Keyname + "</p></div></td>";
@@ -460,5 +480,45 @@ $.fn.itxtablegrid = function (opt) {
                 Table.append(row);
             }
         }
+    }
+    function DisplayDataInTree(tbl, data, expandByDefault, columnWidth, LevelIndex, keyName) {
+        var row = jQuery("<tr>", {});
+        if (LevelIndex != 0)
+            row.attr("KeyName", keyName);
+        var html = "";
+        var td = jQuery("<td>", {});
+        if (columnWidth[0] != undefined)
+            td.attr('width', columnWidth[0]);
+        var dt = new Date();
+        var expandcollapsekey = dt.getHours().toString() + dt.getMinutes().toString() + dt.getSeconds().toString() + dt.getMilliseconds().toString();
+        if (data.childrows.length > 0) {
+            if (expandByDefault)
+                html = "<div class='expandable level-" + LevelIndex + "'><img src='/Images/Collapse.png' ExpandStatus='0'/><p key='" + expandcollapsekey + "'>" + data.elements[0] + "</p></div>";
+            else
+                html = "<div class='expandable level-" + LevelIndex + "'><img src='/Images/Expand.png' ExpandStatus='1'/><p key='" + expandcollapsekey + "'>" + data.elements[0] + "</p></div>";
+        }
+        else {
+            html = "<div class='expandable level-" + LevelIndex + "'><p>" + data.elements[0] + "</p></div>";
+        }
+        td.append(html);
+        row.append(td);
+        for (var colIndex = 1; colIndex < data.elements.length; colIndex++) {
+            td = jQuery("<td>", {});
+            if (columnWidth[colIndex] != undefined)
+                td.attr('width', columnWidth[colIndex]);
+            td.append(data.elements[colIndex]);
+            row.append(td);
+        }
+        tbl.append(row);
+        for (var childRowIndex = 0; childRowIndex < data.childrows.length; childRowIndex++) {
+            DisplayDataInTree(tbl, data.childrows[childRowIndex], expandByDefault, columnWidth, LevelIndex + 1, expandcollapsekey);
+        }
+    }
+    function BindExpandCollapseEvents_Treeview() {
+        var elements = $('tr td div img');
+        elements.click(function () {
+            expandOrcollapase($(this).parent().find('p').attr('key'), $(this), true);
+        })
+        expandOrCollapseMouseEvents(elements);
     }
 };

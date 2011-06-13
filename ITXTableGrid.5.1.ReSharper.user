@@ -1,0 +1,85 @@
+<Configuration>
+  <SettingsComponent>
+    <string />
+    <integer />
+    <boolean>
+      <setting name="SolutionAnalysisEnabled">False</setting>
+    </boolean>
+  </SettingsComponent>
+  <CompletionStatisticsManager>
+    <ItemStatistics item="Default">
+      <Item value="public" priority="1" />
+      <Item value="class" priority="0" />
+      <Item value="string" priority="1" />
+      <Item value="Columns`0" priority="0" />
+      <Item value="columns" priority="0" />
+      <Item value="new" priority="0" />
+      <Item value="Columns" priority="0" />
+      <Item value="childrow" priority="0" />
+      <Item value="childrow2" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.String">
+      <Item value="Empty" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:ITXTableGrid.Rows">
+      <Item value="childrows" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.List`1">
+      <Item value="Add`0" priority="0" />
+    </ItemStatistics>
+  </CompletionStatisticsManager>
+  <RecentFiles>
+    <RecentFiles>
+      <File id="32D5ACCF-6E5F-458E-A4E9-86B3EAA751D6/d:Grouping/f:Single_Level.aspx" caret="1713" fromTop="27" />
+      <File id="32D5ACCF-6E5F-458E-A4E9-86B3EAA751D6/f:TableAnimation.js" caret="0" fromTop="0" />
+      <File id="32D5ACCF-6E5F-458E-A4E9-86B3EAA751D6/d:Grouping/f:Multi_Level.aspx" caret="1735" fromTop="26" />
+      <File id="32D5ACCF-6E5F-458E-A4E9-86B3EAA751D6/f:Test.aspx" caret="1454" fromTop="37" />
+      <File id="32D5ACCF-6E5F-458E-A4E9-86B3EAA751D6/d:TreeView/f:MultiLevel.aspx" caret="1243" fromTop="25" />
+      <File id="32D5ACCF-6E5F-458E-A4E9-86B3EAA751D6/f:Test.aspx.cs" caret="393" fromTop="15" />
+      <File id="32D5ACCF-6E5F-458E-A4E9-86B3EAA751D6/f:ITXTableGrid.js" caret="1340" fromTop="17" />
+    </RecentFiles>
+    <RecentEdits>
+      <File id="32D5ACCF-6E5F-458E-A4E9-86B3EAA751D6/f:Test.aspx" caret="381" fromTop="6" />
+      <File id="32D5ACCF-6E5F-458E-A4E9-86B3EAA751D6/f:ITXTableGrid.js" caret="1068" fromTop="19" />
+      <File id="32D5ACCF-6E5F-458E-A4E9-86B3EAA751D6/f:ITXTableGrid.js" caret="28419" fromTop="20" />
+      <File id="32D5ACCF-6E5F-458E-A4E9-86B3EAA751D6/f:Test.aspx" caret="904" fromTop="13" />
+      <File id="32D5ACCF-6E5F-458E-A4E9-86B3EAA751D6/d:TreeView/f:MultiLevel.aspx" caret="0" fromTop="0" />
+      <File id="32D5ACCF-6E5F-458E-A4E9-86B3EAA751D6/d:TreeView/f:MultiLevel.aspx" caret="1495" fromTop="37" />
+      <File id="32D5ACCF-6E5F-458E-A4E9-86B3EAA751D6/d:TreeView/f:MultiLevel.aspx" caret="513" fromTop="8" />
+      <File id="32D5ACCF-6E5F-458E-A4E9-86B3EAA751D6/f:ITXTableGrid.js" caret="28419" fromTop="20" />
+      <File id="32D5ACCF-6E5F-458E-A4E9-86B3EAA751D6/f:ITXTableGrid.js" caret="28419" fromTop="21" />
+      <File id="32D5ACCF-6E5F-458E-A4E9-86B3EAA751D6/f:ITXTableGrid.js" caret="28419" fromTop="28" />
+      <File id="32D5ACCF-6E5F-458E-A4E9-86B3EAA751D6/f:ITXTableGrid.js" caret="28419" fromTop="31" />
+      <File id="32D5ACCF-6E5F-458E-A4E9-86B3EAA751D6/f:ITXTableGrid.js" caret="28419" fromTop="36" />
+      <File id="32D5ACCF-6E5F-458E-A4E9-86B3EAA751D6/f:Test.aspx.cs" caret="914" fromTop="27" />
+      <File id="32D5ACCF-6E5F-458E-A4E9-86B3EAA751D6/f:ITXTableGrid.js" caret="28419" fromTop="19" />
+      <File id="32D5ACCF-6E5F-458E-A4E9-86B3EAA751D6/f:ITXTableGrid.js" caret="28419" fromTop="12" />
+      <File id="32D5ACCF-6E5F-458E-A4E9-86B3EAA751D6/f:ITXTableGrid.js" caret="28419" fromTop="21" />
+      <File id="32D5ACCF-6E5F-458E-A4E9-86B3EAA751D6/f:ITXTableGrid.js" caret="28419" fromTop="29" />
+      <File id="32D5ACCF-6E5F-458E-A4E9-86B3EAA751D6/f:ITXTableGrid.js" caret="28419" fromTop="29" />
+      <File id="32D5ACCF-6E5F-458E-A4E9-86B3EAA751D6/f:ITXTableGrid.js" caret="28419" fromTop="27" />
+      <File id="32D5ACCF-6E5F-458E-A4E9-86B3EAA751D6/f:ITXTableGrid.js" caret="28419" fromTop="38" />
+      <File id="32D5ACCF-6E5F-458E-A4E9-86B3EAA751D6/f:ITXTableGrid.js" caret="28419" fromTop="11" />
+      <File id="32D5ACCF-6E5F-458E-A4E9-86B3EAA751D6/f:ITXTableGrid.js" caret="28419" fromTop="28" />
+      <File id="32D5ACCF-6E5F-458E-A4E9-86B3EAA751D6/f:ITXTableGrid.js" caret="28419" fromTop="19" />
+      <File id="32D5ACCF-6E5F-458E-A4E9-86B3EAA751D6/f:ITXTableGrid.js" caret="28419" fromTop="15" />
+      <File id="32D5ACCF-6E5F-458E-A4E9-86B3EAA751D6/f:ITXTableGrid.js" caret="28419" fromTop="14" />
+      <File id="32D5ACCF-6E5F-458E-A4E9-86B3EAA751D6/f:ITXTableGrid.js" caret="28419" fromTop="18" />
+      <File id="32D5ACCF-6E5F-458E-A4E9-86B3EAA751D6/f:ITXTableGrid.js" caret="22581" fromTop="18" />
+      <File id="32D5ACCF-6E5F-458E-A4E9-86B3EAA751D6/f:ITXTableGrid.js" caret="28264" fromTop="24" />
+      <File id="32D5ACCF-6E5F-458E-A4E9-86B3EAA751D6/f:ITXTableGrid.js" caret="22211" fromTop="23" />
+      <File id="32D5ACCF-6E5F-458E-A4E9-86B3EAA751D6/f:ITXTableGrid.js" caret="2421" fromTop="37" />
+    </RecentEdits>
+  </RecentFiles>
+  <NAntValidationSettings>
+    <NAntPath value="" />
+  </NAntValidationSettings>
+  <UnitTestRunner>
+    <Providers />
+  </UnitTestRunner>
+  <UnitTestRunnerNUnit>
+    <NUnitInstallDir IsNull="False">
+    </NUnitInstallDir>
+    <UseAddins>Never</UseAddins>
+  </UnitTestRunnerNUnit>
+</Configuration>

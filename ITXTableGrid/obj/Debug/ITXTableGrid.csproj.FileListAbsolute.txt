@@ -3,3 +3,4 @@ C:\Users\Santhosh\Desktop\MyWorks\ITXTableGrid\ITXTableGrid\bin\ITXTableGrid.pdb
 C:\Users\Santhosh\Desktop\MyWorks\ITXTableGrid\ITXTableGrid\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Santhosh\Desktop\MyWorks\ITXTableGrid\ITXTableGrid\obj\Debug\ITXTableGrid.dll
 C:\Users\Santhosh\Desktop\MyWorks\ITXTableGrid\ITXTableGrid\obj\Debug\ITXTableGrid.pdb
+C:\Users\Santhosh\Desktop\MyWorks\ITXTableGrid\ITXTableGrid\bin\Newtonsoft.Json.Net35.dll

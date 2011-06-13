@@ -13,6 +13,7 @@
     <RootNamespace>ITXTableGrid</RootNamespace>
     <AssemblyName>ITXTableGrid</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -32,6 +33,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json.Net35, Version=4.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\Newtonsoft.Json.Net35.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Core" />
@@ -47,6 +52,9 @@
     <Reference Include="System.Web.Mobile" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Grouping\Multi_Level.aspx" />
+    <Content Include="Grouping\Single_Level.aspx" />
+    <Content Include="Simple\CustomWidth.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="Images\Add-hover.png" />
     <Content Include="Images\Add.png" />
@@ -70,8 +78,12 @@
     <Content Include="ITXTableGrid.js" />
     <Content Include="jquery-1.6.1.min.js" />
     <Content Include="jshashset.js" />
+    <Content Include="Newtonsoft.Json.Net35.dll" />
+    <Content Include="Simple\SimpleView.aspx" />
     <Content Include="style.css" />
+    <Content Include="TableAnimation.js" />
     <Content Include="Test.aspx" />
+    <Content Include="TreeView\MultiLevel.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -81,6 +93,27 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Grouping\Multi_Level.aspx.cs">
+      <DependentUpon>Multi_Level.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Grouping\Multi_Level.aspx.designer.cs">
+      <DependentUpon>Multi_Level.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Grouping\Single_Level.aspx.cs">
+      <DependentUpon>Single_Level.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Grouping\Single_Level.aspx.designer.cs">
+      <DependentUpon>Single_Level.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Simple\CustomWidth.aspx.cs">
+      <DependentUpon>CustomWidth.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Simple\CustomWidth.aspx.designer.cs">
+      <DependentUpon>CustomWidth.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <SubType>ASPXCodeBehind</SubType>
       <DependentUpon>Default.aspx</DependentUpon>
@@ -89,12 +122,26 @@
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Simple\SimpleView.aspx.cs">
+      <DependentUpon>SimpleView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Simple\SimpleView.aspx.designer.cs">
+      <DependentUpon>SimpleView.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Test.aspx.cs">
       <DependentUpon>Test.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Test.aspx.designer.cs">
       <DependentUpon>Test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TreeView\MultiLevel.aspx.cs">
+      <DependentUpon>MultiLevel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TreeView\MultiLevel.aspx.designer.cs">
+      <DependentUpon>MultiLevel.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -108,7 +155,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>3051</DevelopmentServerPort>
+          <DevelopmentServerPort>2932</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>
